@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginScreen">
+
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.udacity.shoestore.login.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_welcomeScreen"
+            app:destination="@id/welcomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.udacity.shoestore.welcome.WelcomeScreen"
+        android:label="WelcomeScreen" >
+        <argument android:name="num"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_welcomeScreen_to_instructionsScreen"
+            app:destination="@id/instructionsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsScreen"
+        android:name="com.udacity.shoestore.instruction.InstructionsScreen"
+        android:label="InstructionsScreen" >
+        <action
+            android:id="@+id/action_instructionsScreen_to_shoeScreen"
+            app:destination="@id/shoeScreen"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeScreen"
+        android:name="com.udacity.shoestore.shoelist.ShoeScreen"
+        android:label="ShoeScreen" >
+        <action
+            android:id="@+id/action_shoeScreen_to_shoeDetailScreen"
+            app:destination="@id/shoeDetailScreen" />
+        <action
+            android:id="@+id/action_shoeScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailScreen"
+        android:name="com.udacity.shoestore.shoedetail.ShoeDetailScreen"
+        android:label="ShoeDetailScreen" />
+</navigation>

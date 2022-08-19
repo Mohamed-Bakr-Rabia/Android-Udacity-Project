@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.MyViewModel" />
+    </data>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:layout_margin="10dp"
+     android:orientation="vertical">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:rowCount="4"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_shoe_name" />
+
+        <EditText
+            android:id="@+id/shoe_name"
+            style="@style/shoe_detail_text"
+            android:autofillHints=""
+            android:hint="@string/shoe_name"
+            android:inputType="text" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_company_name" />
+
+        <EditText
+            android:id="@+id/company"
+            android:hint="@string/company_name"
+            android:inputType="text"
+            style="@style/shoe_detail_text"
+            android:autofillHints="" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_shoe_size" />
+
+        <EditText
+            android:id="@+id/shoe_size"
+            android:hint="@string/shoe_size"
+            android:inputType="number"
+            style="@style/shoe_detail_text"
+            android:autofillHints="" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_description" />
+
+        <EditText
+            android:id="@+id/description"
+            style="@style/shoe_detail_text"
+            android:autofillHints=""
+            android:hint="@string/description"
+            android:inputType="text" />
+
+    </GridLayout>
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
+
+         <Button
+             android:id="@+id/cancel"
+             style="@style/button"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="5dp"
+             android:layout_marginTop="20dp"
+             android:layout_marginEnd="5dp"
+             android:layout_weight="1"
+             android:backgroundTint="@color/cancelButton"
+             android:text="@string/cancel"
+             android:onClick="@{(view)->viewModel.navigate(view)}"
+             android:textColor="#FFFFFF" />
+         <Button
+             android:id="@+id/save"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/save"
+             style="@style/button"
+             android:layout_weight="1"
+             android:layout_marginTop="20dp"
+             android:layout_marginStart="5dp"
+             android:layout_marginEnd="5dp"
+
+             />
+
+     </LinearLayout>
+
+ </LinearLayout>
+</layout>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="email_example_com">email@example.com</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="welcome">Welcome</string>
+    <string name="explore">explore</string>
+    <string name="welcome_text">welcome to the shoe store click explore read the instruction </string>
+    <string name="shoeList">ShoeList</string>
+    <string name="go_to_shoe_list">Go to Shoe List</string>
+    <string name="description">description</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="enter_shoe_name">Enter Shoe Name</string>
+    <string name="shoe_name">shoe name</string>
+    <string name="enter_your_company_name">Enter Your Company Name</string>
+    <string name="company_name">company name</string>
+    <string name="enter_your_shoe_size">Enter Your Shoe Size</string>
+    <string name="shoe_size">shoe size</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="log_out">Log Out</string>
+    <string name="size">Size</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="todo">TODO</string>
+    <string name="instruction">Instructions</string>
+    <string name="instruction1">click go to shoe to enter list show</string>
+    <string name="instruction2">to add new shoe</string>
+    <string name="instruction3">1 - go to shoe list screen</string>
+    <string name="instruction4">2 - click the floating button</string>
+    <string name="instruction5">3 - add shoe info and then click save</string>
+</resources>
