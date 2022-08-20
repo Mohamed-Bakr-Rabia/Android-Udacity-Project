@@ -1,17 +1,11 @@
 package com.udacity.shoestore
 
 import android.view.View
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.udacity.shoestore.databinding.FragmentShoeDetailScreenBinding
-import com.udacity.shoestore.databinding.FragmentShoeScreenBinding
-import com.udacity.shoestore.databinding.ListItemBinding
 import com.udacity.shoestore.models.Shoe
-import com.udacity.shoestore.shoedetail.ShoeDetailScreen
 import java.util.ArrayList
 
 class MyViewModel : ViewModel() {
@@ -23,9 +17,9 @@ class MyViewModel : ViewModel() {
 
     // Dummy Data
     private val arrayList = ArrayList<Shoe>()
-    var shoe = Shoe(name = "Shoe 1", size = "12", company = "Shoe Company", description = "great shoe")
 
     init {
+
         _shoeList.postValue(arrayList)
 
     }
@@ -39,13 +33,12 @@ class MyViewModel : ViewModel() {
             R.id.go_to_list -> navController.navigate(R.id.action_instructionsScreen_to_shoeScreen)
             R.id.floating_button -> navController.navigate(R.id.action_shoeScreen_to_shoeDetailScreen)
             R.id.cancel -> navController.popBackStack()
-            R.id.save -> addListItem(view)
         }
 
     }
 
-     fun addListItem(view: View) {
-        arrayList.add(shoe)
+     fun addListItem(view: View, shoe: Shoe) {
+        _shoeList.value?.add(shoe)
         view.findNavController().popBackStack()
 
     }

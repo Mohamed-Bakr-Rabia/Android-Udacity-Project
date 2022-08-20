@@ -2,6 +2,7 @@ package com.udacity.shoestore.shoelist
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -35,12 +36,7 @@ class ShoeScreen : Fragment() {
             showList.forEachIndexed{ index,shoe ->
                 binding.listLayout.addView(createView(shoe),index)
             }
-
         }
-
-
-
-
         return binding.root
     }
 

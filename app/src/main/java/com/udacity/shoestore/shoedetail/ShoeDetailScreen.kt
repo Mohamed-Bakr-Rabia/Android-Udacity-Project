@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.udacity.shoestore.MyViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailScreenBinding
@@ -29,7 +26,11 @@ class ShoeDetailScreen : Fragment() {
         )
         viewModel = ViewModelProvider(activity as ViewModelStoreOwner)[MyViewModel::class.java]
         binding.viewModel =  viewModel
-
+        binding.shoe = Shoe(name = "", size = "", company = "", description = "")
+        val shoe = binding.shoe
+        binding.save.setOnClickListener{ view->
+            viewModel.addListItem(view,shoe!!)
+        }
         return binding.root
     }
 
