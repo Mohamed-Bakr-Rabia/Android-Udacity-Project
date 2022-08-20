@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
             name="viewModel"
             type="com.udacity.shoestore.MyViewModel" />
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
+
+    <!-- us linear layout to place 2 view group vertically   -->
  <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="match_parent"
      android:layout_margin="10dp"
      android:orientation="vertical">
+        <!-- using grid layout to make a two-column view
+        column for labels and column for edit text-->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +34,7 @@
             android:id="@+id/shoe_name"
             style="@style/shoe_detail_text"
             android:autofillHints=""
+            android:text="@={viewModel.shoe.name}"
             android:hint="@string/shoe_name"
             android:inputType="text" />
         <TextView
@@ -38,6 +45,7 @@
         <EditText
             android:id="@+id/company"
             android:hint="@string/company_name"
+            android:text="@={viewModel.shoe.company}"
             android:inputType="text"
             style="@style/shoe_detail_text"
             android:autofillHints="" />
@@ -49,6 +57,7 @@
         <EditText
             android:id="@+id/shoe_size"
             android:hint="@string/shoe_size"
+            android:text="@={viewModel.shoe.size}"
             android:inputType="number"
             style="@style/shoe_detail_text"
             android:autofillHints="" />
@@ -60,12 +69,16 @@
         <EditText
             android:id="@+id/description"
             style="@style/shoe_detail_text"
+            android:text="@={viewModel.shoe.description}"
             android:autofillHints=""
             android:hint="@string/description"
             android:inputType="text" />
 
     </GridLayout>
+        <!--  using linear layout to place the button
+        horizontally under the grid layout   -->
      <LinearLayout
+
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:orientation="horizontal">
@@ -89,6 +102,7 @@
              android:layout_height="wrap_content"
              android:text="@string/save"
              style="@style/button"
+             android:onClick="@{(view)->viewModel.navigate(view)}"
              android:layout_weight="1"
              android:layout_marginTop="20dp"
              android:layout_marginStart="5dp"

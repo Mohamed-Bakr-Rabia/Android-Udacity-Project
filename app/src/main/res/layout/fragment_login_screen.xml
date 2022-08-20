@@ -7,10 +7,14 @@
             name="viewModel"
             type="com.udacity.shoestore.MyViewModel" />
     </data>
+    <!-- using constraint  layout to add constraint to the two button
+          with the linear layout and place them in a different location
+           not particularly aligned
+     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <!-- using linear layout to aligned the view vertically  -->
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"

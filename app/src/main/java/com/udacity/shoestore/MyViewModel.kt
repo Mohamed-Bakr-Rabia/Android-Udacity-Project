@@ -23,30 +23,28 @@ class MyViewModel : ViewModel() {
 
     // Dummy Data
     private val arrayList = ArrayList<Shoe>()
-
+    var shoe = Shoe(name = "Shoe 1", size = "12", company = "Shoe Company", description = "great shoe")
 
     init {
-        arrayList.add(
-            Shoe(name = "Shoe 1", size = "12", company = "Shoe Company", description = "great shoe")
-        )
         _shoeList.postValue(arrayList)
 
     }
 
 
     fun navigate(view: View){
-        var navController = view.findNavController()
+        val navController = view.findNavController()
         when(view.id){
             R.id.sign_in , R.id.create_new_account-> navController.navigate(R.id.action_loginScreen_to_welcomeScreen)
             R.id.explore -> navController.navigate(R.id.action_welcomeScreen_to_instructionsScreen)
             R.id.go_to_list -> navController.navigate(R.id.action_instructionsScreen_to_shoeScreen)
             R.id.floating_button -> navController.navigate(R.id.action_shoeScreen_to_shoeDetailScreen)
             R.id.cancel -> navController.popBackStack()
+            R.id.save -> addListItem(view)
         }
 
     }
 
-     fun addListItem(view: View ,shoe:Shoe ) {
+     fun addListItem(view: View) {
         arrayList.add(shoe)
         view.findNavController().popBackStack()
 

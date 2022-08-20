@@ -24,21 +24,12 @@ class ShoeDetailScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var binding : FragmentShoeDetailScreenBinding = DataBindingUtil.inflate(
+        val binding : FragmentShoeDetailScreenBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_detail_screen,container,false
         )
         viewModel = ViewModelProvider(activity as ViewModelStoreOwner)[MyViewModel::class.java]
         binding.viewModel =  viewModel
 
-        binding.save.setOnClickListener{ view->
-            var shoe = Shoe(
-                name = binding.shoeName.text.toString(),
-                size = binding.shoeSize.text.toString(),
-                company = binding.company.text.toString(),
-                description = binding.description.text.toString()
-            )
-            viewModel.addListItem(view,shoe)
-        }
         return binding.root
     }
 

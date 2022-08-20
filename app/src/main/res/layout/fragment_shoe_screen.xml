@@ -7,6 +7,7 @@
             name="viewModel"
             type="com.udacity.shoestore.MyViewModel" />
     </data>
+    <!--    using scroll view as per the requirements -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

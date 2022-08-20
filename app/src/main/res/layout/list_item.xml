@@ -6,6 +6,9 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
     </data>
+    <!--using linear layout to add the image and the
+    show info in a horizontal wa
+    -->
     <LinearLayout
        android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -16,11 +19,11 @@
             android:layout_weight="1"
             android:src="@drawable/shoe"
             android:contentDescription="@string/todo" />
+    <!-- using linear layout to make every shoe info appear as a list -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-
             android:orientation="vertical"
             android:layout_weight="2">
             <TextView
